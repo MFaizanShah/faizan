@@ -1,1 +1,15 @@
-hello world
+name: Deploy to Staging
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Deploy to staging
+        env:
+          NAME_OF_YOUR_ENVIRONMENT: staging  # Replace with your environment name
+        # Workflow steps to build, test, and deploy to the staging environment
